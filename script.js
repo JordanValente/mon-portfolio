@@ -1,11 +1,3 @@
-// Menu hamburger
-const hamburger = document.querySelector(".hamburger");
-const navLinks = document.querySelector(".nav-links");
-
-hamburger.addEventListener("click", () => {
-  navLinks.classList.toggle("active");
-});
-
 // Projets dynamiques
 const projects = [
   {
@@ -28,11 +20,36 @@ if (container) {
     const card = document.createElement("div");
     card.className = "project-card";
     card.innerHTML = `
-      <img src="${project.image}" alt="${project.title}" style="width:100%; border-radius:8px; margin-bottom:12px;" />
+      <img src="${project.image}" alt="${project.title}" />
       <h3>${project.title}</h3>
       <p>${project.description}</p>
       <a href="${project.link}" target="_blank">Voir le projet</a>
     `;
     container.appendChild(card);
+  });
+}
+
+// Lightbox (uniquement si galerie présente)
+const lightbox = document.getElementById("lightbox");
+if (lightbox) {
+  const lightboxImg = document.querySelector(".lightbox-img");
+  const closeBtn = document.querySelector(".close");
+
+  document.querySelectorAll(".grid img").forEach(img => {
+    img.addEventListener("click", () => {
+      lightbox.style.display = "flex";
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+    });
+  });
+
+  closeBtn.addEventListener("click", () => {
+    lightbox.style.display = "none";
+  });
+
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) {
+      lightbox.style.display = "none";
+    }
   });
 }

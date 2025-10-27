@@ -33,31 +33,14 @@ nav a {
   text-decoration: none;
   color: #333;
   font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
-.hamburger {
-  display: none;
-  font-size: 28px;
-  background: none;
-  border: none;
-  cursor: pointer;
+nav a:hover {
+  color: #0077cc;
+  background-color: #f0f0f0;
+  border-radius: 4px;
 }
 
-/* Responsive nav */
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    text-align: center;
-    margin-top: 10px;
-  }
-  .nav-links.active {
-    display: flex;
-  }
-  .hamburger {
-    display: block;
-  }
-}
 
 /* Sections */
 main section {
@@ -95,6 +78,11 @@ h2 {
 }
 .project-card:hover {
   transform: translateY(-5px);
+}
+.project-card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 12px;
 }
 .project-card h3 {
   margin-top: 0;
@@ -180,14 +168,42 @@ button[type="submit"]:hover {
 }
 .grid img {
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: cover;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   transition: transform 0.3s ease;
+  cursor: pointer;
 }
 .grid img:hover {
   transform: scale(1.03);
+}
+
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+.lightbox-img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 8px;
+}
+.lightbox .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
 }
 
 /* Footer */
@@ -198,4 +214,33 @@ footer {
   font-size: 0.9rem;
   color: #666;
   border-top: 1px solid #eee;
+}
+/* Navigation responsive */
+@media (max-width: 600px) {
+  nav.nav-links {
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    padding: 10px 0;
+  }
+}
+
+
+  nav.nav-links a {
+    font-size: 1rem;
+    padding: 10px 0;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+  }
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+
+  header h1 {
+    margin-bottom: 10px;
+  }
 }
