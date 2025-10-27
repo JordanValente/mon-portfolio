@@ -3,13 +3,13 @@ const projects = [
   {
     title: "Site Web sous Bootstrap",
     description: "Blog clio 4rs",
-    link: "projects/todo.html",
+    link: "https://jordanvalente.github.io/BlogInfoClio4Rs.github.io/",
     image: "images/Capture d'écran 2025-10-27 145816.png"
   },
   {
     title: "Projet a Venir",
     description: "...",
-    link: "projects/contact-form.html",
+    link: "https://jordanvalente.github.io/BlogInfoClio4Rs.github.io/",
     image: "images/contact-preview.jpg"
   }
 ];
