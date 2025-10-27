@@ -1,14 +1,14 @@
 // Projets dynamiques
 const projects = [
   {
-    title: "To-Do List",
-    description: "Une application simple pour gérer ses tâches.",
+    title: "Site Web sous Bootstrap",
+    description: "Blog clio 4rs",
     link: "projects/todo.html",
-    image: "images/todo-preview.jpg"
+    image: "images/Capture d'écran 2025-10-27 145816.png"
   },
   {
-    title: "Formulaire de contact dynamique",
-    description: "Un formulaire avec validation JS.",
+    title: "Projet a Venir",
+    description: "...",
     link: "projects/contact-form.html",
     image: "images/contact-preview.jpg"
   }
